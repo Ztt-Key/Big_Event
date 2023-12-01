@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--alt+ctrl+空格  提示-->
+<mapper namespace="com.ze.Mapper.ArticleMapper">
+<!--    动态sql-->
+    <select id="list" resultType="com.ze.Pojo.Article">
+        select * from big_event.article
+        <where>
+            <if test="categoryId!=null">
+                category_id =#{categoryId}
+            </if>
+            <if test="state!=null">
+                and state=#{state}
+            </if>
+            and create_user=#{id}
+        </where>
+
+    </select>
+</mapper>

@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/big_event?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: localhost
+      port: 6379
+#    开启驼峰命名和下划线命名转化（主要作用是数据库字段带有下划线，实体类字段不带）  camel快捷键
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+
